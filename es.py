@@ -17,12 +17,15 @@ media=[]#lista vuota
 #print(temp.shape)
 n_fov=temp.shape[0]
 n_al=temp.shape[1]
-for i in range(n_fov):
+r=0
+for i in range(n_al):
     somma=0
-    for y in range(n_al):
-       somma+=temp[i,y]
-    media.append(somma/n_al)
+    for y in range(n_fov):
+        somma+=temp[y,i]
+        media.append(somma/n_al)
+    r+=1
     print(media[i])
+print(r)
 fg.close()
 
 
