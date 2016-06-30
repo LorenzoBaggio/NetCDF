@@ -15,17 +15,14 @@ temp=np.array(t)#creo array
 #print(temp)
 media=[]#lista vuota
 #print(temp.shape)
-n_fov=temp.shape[0]
-n_al=temp.shape[1]
-r=0
-for i in range(n_al):
-    somma=0
-    for y in range(n_fov):
-        somma+=temp[y,i]
-        media.append(somma/n_al)
-    r+=1
-    print(media[i])
-print(r)
+n_fov=temp.shape[0]#1000 temperature per ogni livello
+n_al=temp.shape[1]#61 livelli
+somma=0
+for i in range(n_fov):#fino  1000 
+    somma+=temp[i]
+media.append(somma/n_fov)
+print(media)
+
 fg.close()
 
 
